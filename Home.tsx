@@ -21,7 +21,8 @@ const instructions = Platform.select({
 });
 
 interface Props {}
-export class App extends Component<Props> {
+interface State {}
+export class HomeScreen extends Component<Props> {
   constructor(props: Props) {
     super(props);
     this.state = { count: 0 }
@@ -29,9 +30,9 @@ export class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Button onPress={this.props.signUp} title='SignupR'/>
-        <Button onPress={() => this.props.navigation.navigate('Profile') } title='Sign In'/>
+        <Text style={styles.welcome}>Find Mrs. Right</Text>
+        <Button onPress={this.props.signUp} title='Sign Up' style={styles.button}/>
+        <Button onPress={() => this.props.navigation.navigate('Profile') } title='Sign In' style={styles.button}/>
         <Text>{this.props.count}</Text>
         <Text style={styles.instructions}>{instructions}</Text>
       </View>
@@ -56,6 +57,9 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  button: {
+
+  }
 });
 
 const mapStateToProps = (state: State) => (
@@ -67,9 +71,12 @@ const mapStateToProps = (state: State) => (
 const mapDispatchToProps = (dispatch: any) => (
   {
     signUp: (_count: number) => {
-      dispatch({ type: 'ADD_COUNT', count: _count })
+      dispatch({ type: 'SIGNUP', count: _count })
+    },
+    signIn: (_count: number) => {
+      dispatch({ type: 'SIGNIN', count: _count })
     }
   }
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)

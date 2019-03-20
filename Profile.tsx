@@ -11,29 +11,17 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { connect } from 'react-redux';
-import { Button } from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
 
 interface Props {}
-export class App extends Component<Props> {
+interface State {}
+export class ProfileScreen extends Component<Props> {
   constructor(props: Props) {
     super(props);
-    this.state = { count: 0 }
   }
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Button onPress={this.props.signUp} title='SignupR'/>
-        <Button onPress={() => this.props.navigation.navigate('Profile') } title='Sign In'/>
-        <Text>{this.props.count}</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Text style={styles.welcome}>Find Mrs. Profile</Text>
       </View>
     );
   }
@@ -56,20 +44,19 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  button: {
+
+  }
 });
 
 const mapStateToProps = (state: State) => (
   {
-    count: state.count
   }
 )
 
 const mapDispatchToProps = (dispatch: any) => (
   {
-    signUp: (_count: number) => {
-      dispatch({ type: 'ADD_COUNT', count: _count })
-    }
   }
 );
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen)
