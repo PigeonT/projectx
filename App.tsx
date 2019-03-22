@@ -12,7 +12,14 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import { connect } from 'react-redux';
 import { Button } from 'react-native';
+import { createStackNavigator, createAppContainer } from "react-navigation";
+import ProfileScreen from './components/ProfileScreen';
 
+
+
+// export default createAppContainer(AppNavigator);
+
+//Profile
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -21,7 +28,7 @@ const instructions = Platform.select({
 });
 
 interface Props {}
-export class App extends Component<Props> {
+export class HomeScreen extends Component<Props> {
   constructor(props: Props) {
     super(props);
     this.state = { count: 0 }
@@ -71,5 +78,15 @@ const mapDispatchToProps = (dispatch: any) => (
     }
   }
 );
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: connect(mapStateToProps, mapDispatchToProps)(HomeScreen)
+  },
+  Profile:{
+    screen: ProfileScreen
+  }
+});
+export default createAppContainer(AppNavigator);
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+

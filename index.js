@@ -13,7 +13,6 @@ import reducer from './reducers/reducer';
 
 
 const AppContainer = () => {
-    
     return <Provider store={createStore(reducer)}>
         <App />
     </Provider >
