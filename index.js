@@ -7,5 +7,4 @@
 // side effect of breaking other tooling like mobile-center and react-native-rename.
 //
 // It's easier just to leave it here.
-
 import "./app/app.tsx"

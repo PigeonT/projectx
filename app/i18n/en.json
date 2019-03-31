@@ -10,7 +10,8 @@
   "firstExampleScreen": {
     "poweredBy": "POWERED BY BOWSER",
     "readyForLaunch": "Ready for launch.",
-    "continue": "CONTINUE"
+    "continue": "CONTINUE",
+    "signUp": "Sign Up"
   },
   "secondExampleScreen": {
     "howTo": "HOW TO",

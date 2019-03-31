@@ -54,6 +54,7 @@
     "@types/react-test-renderer": "16.0.3",
     "babel-jest": "24.5.0",
     "babel-plugin-transform-inline-environment-variables": "0.4.3",
+    "firebase": "^5.9.2",
     "ignite-bowser": "^3.0.0",
     "jest": "24.5.0",
     "jest-preset-ignite": "0.6.1",
@@ -64,6 +65,7 @@
     "prettier": "1.12.1",
     "react-devtools-core": "3.4.3",
     "react-dom": "16.5.0",
+    "react-native-firebase": "^5.2.3",
     "react-powerplug": "0.1.5",
     "react-test-renderer": "16.6.3",
     "rimraf": "2.6.2",
@@ -74,34 +76,6 @@
   },
   "jest": {
     "preset": "jest-preset-ignite"
-  },
-  "babel": {
-    "presets": [
-      "module:metro-react-native-babel-preset"
-    ],
-    "env": {
-      "production": {}
-    },
-    "plugins": [
-      [
-        "transform-inline-environment-variables",
-        {
-          "include": [
-            "NODE_ENV",
-            "API"
-          ]
-        }
-      ],
-      [
-        "@babel/plugin-proposal-decorators",
-        {
-          "legacy": true
-        }
-      ],
-      [
-        "@babel/plugin-proposal-optional-catch-binding"
-      ]
-    ]
   },
   "prettier": {
     "printWidth": 100,
